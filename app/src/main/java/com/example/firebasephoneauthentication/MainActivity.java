@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 if(mainBinding.etPhoneNo.getText().toString().isEmpty()|| mainBinding.etPhoneNo.getText().toString().length()!= 10){
                     mainBinding.etPhoneNo.setError("Mandatory Field . length should be 10");  
                     mainBinding.etPhoneNo.requestFocus();
+                    mainBinding.progressBar.setVisibility(View.INVISIBLE);
                     return;
                 }
                 Intent intent=new Intent(MainActivity.this, EnterOtpActivity.class);

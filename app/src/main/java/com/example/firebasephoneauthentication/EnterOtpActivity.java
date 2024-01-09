@@ -44,6 +44,11 @@ public class EnterOtpActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 otpBinding.progressBarOtp.setVisibility(View.VISIBLE);
+                if(otpBinding.etOtp.getText().toString().isEmpty()){
+                    otpBinding.etOtp.setError(" Mandatory Field !");
+                    otpBinding.etOtp.requestFocus();
+                    return;
+                }
                  PhoneAuthCredential authCredential=PhoneAuthProvider.getCredential(otpId, otpBinding.etOtp.getText().toString());
                  signInWithPhoneAuthCredential(authCredential);
             }
